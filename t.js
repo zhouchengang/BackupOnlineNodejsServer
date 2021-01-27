@@ -1,21 +1,12 @@
 var oss = require('ali-oss');
 
 var store = oss({
-  accessKeyId: 'your access key',
-  accessKeySecret: 'your access secret',
-  bucket: 'your bucket name',
-  region: 'oss-cn-hangzhou'
+  accessKeyId: 'LTAI4G1QUQQJC2dHuvVfoq21',
+  accessKeySecret: 'z5fPIHRvzFoTHrJyfHDRfXE10jNxqI',
+  bucket: 'backupzcg',
+  region: 'https://backupzcg.oss-cn-hongkong-internal.aliyuncs.com'
 });
 
-client.useBucket('backupzcg');
-async function list () {
-  try {
-    let result = await client.list({
-      'max-keys': 5
-    })
-    console.log(result)
-  } catch (err) {
-    console.log (err)
-  }
-}
-list();
+//client.useBucket('backupzcg');
+let signUrl = store.signatureUrl('xxx.jpg', {expires: 60, 'process' : 'style/jpg'});
+console.log("signUrl="+signUrl);
