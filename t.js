@@ -27,7 +27,7 @@ list();
 
 async function get () {
   try {
-    let result = await client.get('object-name');
+    let result = await client.get('xxx.jpg');
     console.log(result);
   } catch (err) {
     console.log (err);
