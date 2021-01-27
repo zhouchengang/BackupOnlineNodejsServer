@@ -7,7 +7,7 @@ var store = oss({
   region: 'oss-cn-hongkong'
 });
 
-//client.useBucket('backupzcg');
+client.useBucket('backupzcg');
 //let signUrl = store.signatureUrl('xxx.jpg', {expires: 60, 'process' : 'style/jpg'});
 //console.log("signUrl="+signUrl);
 
