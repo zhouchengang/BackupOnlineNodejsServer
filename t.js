@@ -1,6 +1,6 @@
 var oss = require('ali-oss');
 
-var store = oss({
+var client = oss({
   accessKeyId: 'LTAI4G1QUQQJC2dHuvVfoq21',
   accessKeySecret: 'z5fPIHRvzFoTHrJyfHDRfXE10jNxqI',
   bucket: 'backupzcg',
