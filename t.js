@@ -1,10 +1,10 @@
 var oss = require('ali-oss');
 
-const store = new oss({
+var store = oss({
   accessKeyId: 'LTAI4G1QUQQJC2dHuvVfoq21',
   accessKeySecret: 'z5fPIHRvzFoTHrJyfHDRfXE10jNxqI',
   bucket: 'backupzcg',
-  endpoint: 'https://oss-cn-hongkong.aliyuncs.com'
+  region: 'oss-cn-hongkong'
 });
 
 //client.useBucket('backupzcg');
