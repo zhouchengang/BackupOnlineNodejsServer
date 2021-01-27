@@ -4,7 +4,7 @@ const client  = new oss({
   accessKeyId: 'LTAI4GKcVmjrhjCrFGPSK1Qt',
   accessKeySecret: 'Teuxxd8Futcyad7ZOOBqQiEj3emsLi',
   bucket: 'backupzcg',
-  endpoint: 'https://oss-cn-hongkong.aliyuncs.com'
+  endpoint: 'https://backupzcg-oss-cn-hongkong.aliyuncs.com'
 });
 
 client.useBucket('backupzcg');
