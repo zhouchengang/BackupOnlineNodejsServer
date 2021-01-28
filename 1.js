@@ -268,7 +268,7 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = function () {
+        let result = async function () {
             try {
                 let result = await client.list({
                   'max-keys': 5
