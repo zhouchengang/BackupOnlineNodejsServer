@@ -273,9 +273,9 @@ app.get('/Get/OSS', function (req, res) {
                 console.log("123")
                 console.log(result)
                 var data = {};
-        data.result = JSON.stringify(result)
-        data.signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
-        resultJson.onSuccess(res, data);
+                data.result = result
+                data.signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
+                resultJson.onSuccess(res, data);
             }
         )
         //console.log(result)
