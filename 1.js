@@ -217,9 +217,9 @@ const client  = new oss({
 
 
 
- function list () {
+ async function list () {
   try {
-    let result =  client.list({
+    let result = await client.list({
       'max-keys': 5
     })
     console.log(result)
@@ -268,12 +268,14 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        //let result = client.list({'max-keys': 5})
+        let result = client.list({'max-keys': 5},function(err, count) {
+            console.log("aasasas")
+            
+        })
         //console.log(result)
         //let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
         var data = {};
-        data.result = JSON.stringify(list())
-        console.log ("here")
+        data.result = JSON.stringify(result)
         data.signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
         resultJson.onSuccess(res, data);
     } catch (err) {
