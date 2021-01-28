@@ -253,12 +253,12 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = client.list({
+        let result = await client.list({
             'max-keys': 5
         })
         console.log(result)
         var data = {};
-        let signUrl = client.signatureUrl('xxx.jpg', {expires: 60});
+        let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
         data.item1 = 'leavesC';
         data.result = result.length;
         data.signUrl=signUrl;
