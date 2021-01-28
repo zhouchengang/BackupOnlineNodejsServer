@@ -180,7 +180,6 @@ app.post('/Post/postUser', function (req, res) {
 });
 
 
-app.listen(1223);
 
 
 
@@ -204,3 +203,70 @@ function getMime(extname){
             return "text/html";
     }
 }
+
+
+
+var oss = require('ali-oss');
+
+const client  = new oss({
+  accessKeyId: 'LTAI4GEBqghJsjehciQKfSzu',
+  accessKeySecret: 'KoP7tPbfjNYZ2cjNaIOiyx3f1tsUhA',
+  bucket: 'backupzcg',
+  endpoint: 'https://oss-cn-hongkong-internal.aliyuncs.com'
+});
+
+
+
+
+app.get('/Get/getString', function (req, res) {
+    //请求的参数
+    var query = req.query;
+    for (var key in query) {
+        console.log("参数 key is: ", key, " , value is: ", query[key]);
+    }
+    //请求头
+    var headers = req.headers;
+    for (var key in headers) {
+        console.log("头部信息 key is: ", key, " , value is: ", headers[key]);
+    }
+    //链接
+    console.log("Url：", req.url);
+
+    //如果该次访问带有key值为“userName”的请求头，如果value不是“leavesC”，则认为请求的参数错误
+    //如果不带有key值为“userName”的请求头，则不受影响
+    //要注意，请求头的key值会被置为小写
+    if(headers.hasOwnProperty('username')){
+        console.log("userName： hasssssss");
+    }
+
+    if(headers.hasOwnProperty('host')){
+        console.log("userName： hostttttttt");
+    }
+
+    var userName= headers['userName'];
+    if (userName && userName !== 'leavesC') {
+        return resultJson.onParamsError(res);
+    }
+    //var data = {};
+    //data.item1 = 'leavesC';
+    //data.item2 = 123456;
+    //resultJson.onSuccess(res, data);
+    
+    try {
+        let result = await client.list({
+            'max-keys': 5
+        })
+        console.log(result)
+        resultJson.onSuccess(res, result);
+    } catch (err) {
+        console.log (err)
+    }
+    
+});
+
+
+
+
+
+
+app.listen(1223);
