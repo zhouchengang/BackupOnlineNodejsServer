@@ -218,7 +218,7 @@ const client  = new oss({
 
 
 
-app.get('/Get/getString', function (req, res) {
+app.get('/Get/OSS', function (req, res) {
     //请求的参数
     var query = req.query;
     for (var key in query) {
