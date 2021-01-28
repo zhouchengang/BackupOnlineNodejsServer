@@ -258,8 +258,10 @@ app.get('/Get/OSS', function (req, res) {
         })
         console.log(result)
         var data = {};
+        let signUrl = client.signatureUrl('xxx.jpg', {expires: 60, 'process' : 'style/jpg'});
         data.item1 = 'leavesC';
         data.result = result.length;
+        data.signUrl=signUrl;
         resultJson.onSuccess(res, data);
         //resultJson.onSuccess(res, result);
     } catch (err) {
