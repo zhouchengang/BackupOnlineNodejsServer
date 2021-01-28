@@ -273,6 +273,7 @@ app.get('/Get/OSS', function (req, res) {
         //let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
         var data = {};
         data.result = JSON.stringify(list())
+        console.log ("here")
         data.signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
         resultJson.onSuccess(res, data);
     } catch (err) {
