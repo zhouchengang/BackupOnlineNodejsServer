@@ -257,7 +257,11 @@ app.get('/Get/OSS', function (req, res) {
             'max-keys': 5
         })
         console.log(result)
-        resultJson.onSuccess(res, result);
+        var data = {};
+        data.item1 = 'leavesC';
+        data.result = result.length;
+        resultJson.onSuccess(res, data);
+        //resultJson.onSuccess(res, result);
     } catch (err) {
         console.log (err)
     }
