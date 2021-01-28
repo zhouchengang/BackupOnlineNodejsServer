@@ -268,7 +268,7 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        list().then(){
+        list().then(
             function (result){
                 console.log("123")
                 console.log(result)
@@ -277,7 +277,7 @@ app.get('/Get/OSS', function (req, res) {
         data.signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
         resultJson.onSuccess(res, data);
             }
-        }
+        )
         //console.log(result)
         //let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
 //         var data = {};
