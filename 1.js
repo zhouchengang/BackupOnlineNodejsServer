@@ -217,6 +217,21 @@ const client  = new oss({
 
 
 
+async function list () {
+  try {
+    let result = await client.list({
+      'max-keys': 5
+    })
+    console.log(result)
+    return result;
+  } catch (err) {
+    console.log (err)
+      return [];
+  }
+}
+
+
+
 
 app.get('/Get/OSS', function (req, res) {
     //请求的参数
@@ -253,9 +268,7 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = await client.list({
-            'max-keys': 5
-        })
+        let result = list()
         console.log(result)
         var data = {};
         let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
