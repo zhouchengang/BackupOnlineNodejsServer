@@ -268,25 +268,31 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = async function () {
+        let rr = async function () {
             try {
                 let result = await client.list({
                   'max-keys': 5
                 })
                 console.log(result)
-                return result;
+                
+                var data = {};
+                let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
+                data.item1 = 'leavesC';
+                data.result = result.length;
+                data.signUrl=signUrl;
+                resultJson.onSuccess(res, data);
+                
             } catch (err) {
                 console.log (err)
-                return [];
             }
         }
-        console.log(result)
-        var data = {};
-        let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
-        data.item1 = 'leavesC';
-        data.result = result.length;
-        data.signUrl=signUrl;
-        resultJson.onSuccess(res, data);
+//         console.log(result)
+//         var data = {};
+//         let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
+//         data.item1 = 'leavesC';
+//         data.result = result.length;
+//         data.signUrl=signUrl;
+//         resultJson.onSuccess(res, data);
         //resultJson.onSuccess(res, result);
     } catch (err) {
         console.log (err)
