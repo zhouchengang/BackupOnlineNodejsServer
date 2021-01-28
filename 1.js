@@ -253,7 +253,7 @@ app.get('/Get/getString', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = await client.list({
+        let result = client.list({
             'max-keys': 5
         })
         console.log(result)
