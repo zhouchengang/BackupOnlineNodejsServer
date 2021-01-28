@@ -268,9 +268,8 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = client.list({'max-keys': 5},function(err, count) {
+        let result = list(function(err, count) {
             console.log("aasasas")
-            
         })
         //console.log(result)
         //let signUrl = client.signatureUrl('xxx.jpg', {expires: 30000});
