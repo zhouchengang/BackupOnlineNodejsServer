@@ -212,7 +212,7 @@ const client  = new oss({
   accessKeyId: 'LTAI4GEBqghJsjehciQKfSzu',
   accessKeySecret: 'KoP7tPbfjNYZ2cjNaIOiyx3f1tsUhA',
   bucket: 'backupzcg',
-  endpoint: 'https://oss-cn-hongkong.aliyuncs.com'
+  endpoint: 'https://oss-cn-hongkong-internal.aliyuncs.com'
 });
 
 
