@@ -268,7 +268,7 @@ app.get('/Get/OSS', function (req, res) {
     //resultJson.onSuccess(res, data);
     
     try {
-        let result = list(function(err, count) {
+        let result = list(function(err) {
             console.log("aasasas")
         })
         //console.log(result)
