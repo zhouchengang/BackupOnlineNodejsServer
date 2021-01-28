@@ -1,1 +1,7 @@
 https://blog.csdn.net/wzq793957419/article/details/68067204
+Centos 7 使用git 用 ssh 连接github服务器
+
+
+
+https://www.cnblogs.com/mchina/archive/2013/01/30/2880680.html
+linux screen 命令详解
